@@ -1,0 +1,279 @@
+/* ==============================
+   CINEVERSE - NETFLIX THEME
+================================ */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+:root {
+  --primary: #e50914;
+  --background: #080808;
+  --card-bg: #181818;
+  --text: #ffffff;
+  --secondary: #a3a3a3;
+}
+
+/* Main Application */
+
+.app-container {
+  min-height: 100vh;
+  padding: 35px 5%;
+  background: var(--background);
+  color: var(--text);
+}
+
+/* Main Heading */
+
+.app-container > h1 {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+/* Search Form */
+
+.search-form {
+  max-width: 650px;
+  margin: 0 auto 50px;
+  display: flex;
+  gap: 12px;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 15px 20px;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-form input:focus {
+  border-color: var(--primary);
+}
+
+.search-form button {
+  padding: 14px 28px;
+  background: var(--primary);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.search-form button:hover {
+  background: #b20710;
+}
+
+/* Movie List */
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+/* Movie Card */
+
+.movie-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.movie-card:hover {
+  transform: scale(1.04);
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-card h3 {
+  padding: 12px 12px 5px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.movie-card p {
+  padding: 0 12px;
+  margin: 5px 0 12px;
+  color: var(--secondary);
+  font-size: 13px;
+}
+
+.movie-card button {
+  width: calc(100% - 24px);
+  margin: 5px 12px 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.movie-card button:hover {
+  background: var(--primary);
+}
+
+/* Favourites Section */
+
+.favourites-section {
+  margin-top: 65px;
+  padding-top: 30px;
+  border-top: 1px solid #292929;
+}
+
+.favourites-section h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  border-left: 5px solid var(--primary);
+  padding-left: 15px;
+}
+
+.favourites-section > p {
+  color: var(--secondary);
+}
+
+/* Movie Details */
+
+.movie-details {
+  margin-top: 50px;
+  padding: 30px;
+  background: linear-gradient(135deg, #1c1c1c, #101010);
+  border: 1px solid #333;
+  border-radius: 10px;
+  scroll-margin-top: 30px;
+}
+
+.movie-details h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.movie-details img {
+  width: 220px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.movie-details p {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.movie-details button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.movie-details button:hover {
+  background: #b20710;
+}
+
+/* Loading and Error */
+
+.app-container > h2 {
+  text-align: center;
+  color: var(--primary);
+}
+
+.app-container > p {
+  text-align: center;
+  color: #ff6b6b;
+  margin: 15px 0;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 25px 4%;
+  }
+
+  .app-container > h1 {
+    font-size: 27px;
+  }
+
+  .movie-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .movie-card img {
+    height: 230px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-form button {
+    width: 100%;
+  }
+
+  .movie-card img {
+    height: 190px;
+  }
+
+  .movie-card h3 {
+    font-size: 13px;
+  }
+
+  .movie-details {
+    padding: 18px;
+  }
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filter-buttons button {
+  padding: 12px 25px;
+  background: #222;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-buttons button:hover {
+  background: #e50914;
+}
